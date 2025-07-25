@@ -1,4 +1,4 @@
-# 🧠 Backend Learning Journey – Days 1–2: C# Basics + CLI Programming
+# Backend Learning Journey – Days 1–2: C# Basics + CLI Programming
 
 While my core background is in 3D graphics and creative development, I’ve taken on full-stack development as a strategic side learning path to open up career opportunities in web and software engineering.
 
