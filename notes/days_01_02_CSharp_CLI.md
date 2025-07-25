@@ -209,7 +209,8 @@ OOP: Classes, Objects, Inheritance, Encapsulation, Abstraction, Polymorphism
 File I/O
 Enum and Struct
 Static vs Instance members
-Arrays and Lists.
+Arrays and Lists
+
 ---
 
 ## Up Next – Real Backend Essentials
