@@ -199,22 +199,34 @@ int age = int.Parse(Console.ReadLine());
 ---
 
 ## Tips
-
-- Always catch specific exceptions first.
-- Use `finally` to clean up (close files, etc.).
-- `throw` is used to raise manual errors.
-- Prefer readable method names (PascalCase).
-- Comments are useful for clarifying logic and planning.
-
+Always catch specific exceptions first.
+Use finally to clean up (close files, etc.).
+throw is used to raise manual errors.
+Prefer readable method names (PascalCase).
+Comments are useful for clarifying logic and planning.
+Up Next
+OOP: Classes, Objects, Inheritance, Encapsulation, Abstraction, Polymorphism
+File I/O
+Enum and Struct
+Static vs Instance members
+Arrays and Lists.
 ---
 
-## Up Next
+## Up Next – Real Backend Essentials
+OOP in C#
+Master core principles with a real-world mini project: ATM_Simulator_Console_App.cs
 
-- OOP: Classes, Objects, Inheritance, Encapsulation, Abstraction, Polymorphism  
-- File I/O  
-- Enum and Struct  
-- Static vs Instance members  
-- Arrays and Lists  
+File I/O
+Read/write logs, config files, and data exports.
+
+Enum & Struct
+Model states (e.g., AccountStatus) and value types (e.g., Money).
+
+Static vs Instance
+Build reusable utilities vs per-object logic.
+
+Arrays & Lists
+Handle collections like transactions, users, and logs.
 
 ---
 
