@@ -43,7 +43,6 @@ SQL (Structured Query Language) is used to create, read, update, and delete (CRU
 
 ## 4. ALTER TABLE Examples
 
-```sql
 -- 1. ADD COLUMN
 ALTER TABLE table_name ADD column_name column_datatype;
 -- Example:
@@ -87,8 +86,8 @@ ALTER TABLE Employees RENAME TO Staff;
 DROP TABLE table_name;
 -- Example:
 DROP TABLE Staff;
-5. Constraints Examples
 
+5. Constraints Examples
 -- ADD PRIMARY KEY
 ALTER TABLE table_name ADD CONSTRAINT constraint_name PRIMARY KEY (column_name);
 -- Example:
