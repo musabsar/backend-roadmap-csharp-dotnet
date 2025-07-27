@@ -305,11 +305,99 @@ CREATE TABLE student (
 );
 Summary
 Learn SQL and T-SQL deeply for backend and database work.
-
-Use LINQ in your application code for efficient, readable querying.
-
+Use LINQ in my application code for efficient, readable querying.
 Strong SQL skills are crucial in real backend jobs, even with LINQ in use.
-
-Focus on writing queries, understanding joins, subqueries, aggregate functions, constraints, and data manipulation.
-
+i will Focus on writing queries, understanding joins, subqueries, aggregate functions, constraints, and data manipulation.
 This note will guide my backend journey to master databases and querying efficiently and professionally.
+
+
+
+
+
+
+
+
+
+
+
+T-SQL principles:
+## 📊 T-SQL Core Principles for Backend Development
+
+Mastering T-SQL is essential for efficient database operations in SQL Server backend roles. Below are key concepts with syntax and examples:
+
+### 1. Basic CRUD Operations
+
+```sql
+-- Create (Insert)
+INSERT INTO Employees (Name, Age, Department)
+VALUES ('Ali', 30, 'IT');
+
+-- Read (Select)
+SELECT * FROM Employees WHERE Age > 25;
+
+-- Update
+UPDATE Employees SET Age = 31 WHERE Name = 'Ali';
+
+-- Delete
+DELETE FROM Employees WHERE Name = 'Ali';
+2. Filtering, Sorting, and Paging
+
+SELECT Name, Age FROM Employees
+WHERE Department = 'HR'
+ORDER BY Age DESC
+OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;  -- Paging example
+3. Joins
+
+-- Inner Join
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.ID;
+
+-- Left Join
+SELECT e.Name, d.DepartmentName
+FROM Employees e
+LEFT JOIN Departments d ON e.DepartmentID = d.ID;
+4. Aggregation & Grouping
+
+SELECT Department, COUNT(*) AS EmployeeCount, AVG(Age) AS AvgAge
+FROM Employees
+GROUP BY Department
+HAVING COUNT(*) > 5;
+5. Conditional Logic with CASE
+
+SELECT Name, Age,
+  CASE 
+    WHEN Age < 18 THEN 'Minor'
+    WHEN Age >= 18 AND Age < 65 THEN 'Adult'
+    ELSE 'Senior'
+  END AS AgeGroup
+FROM Employees;
+6. Transactions
+
+BEGIN TRANSACTION;
+UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+COMMIT;
+7. Stored Procedures & Variables
+
+CREATE PROCEDURE GetEmployeesByDept
+  @DeptName VARCHAR(50)
+AS
+BEGIN
+  SELECT * FROM Employees WHERE Department = @DeptName;
+END;
+
+-- Execute procedure
+EXEC GetEmployeesByDept 'IT';
+Next Steps to Master T-SQL for Backend Jobs
+Learn query optimization and indexing strategies
+
+Practice window functions (ROW_NUMBER, RANK, etc.)
+
+Understand error handling (TRY...CATCH)
+
+Explore security with roles and permissions
+
+Combine T-SQL knowledge with LINQ in your C# apps
+
+
