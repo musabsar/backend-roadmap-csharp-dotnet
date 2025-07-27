@@ -42,7 +42,7 @@ SQL (Structured Query Language) is used to create, read, update, and delete (CRU
 ---
 
 ## 4. ALTER TABLE Examples
-
+```sql
 -- 1. ADD COLUMN
 ALTER TABLE table_name ADD column_name column_datatype;
 -- Example:
@@ -87,6 +87,8 @@ DROP TABLE table_name;
 -- Example:
 DROP TABLE Staff;
 
+
+
 5. Constraints Examples
 -- ADD PRIMARY KEY
 ALTER TABLE table_name ADD CONSTRAINT constraint_name PRIMARY KEY (column_name);
@@ -105,8 +107,10 @@ ADD CONSTRAINT fk_customer FOREIGN KEY (CustomerID) REFERENCES Customers(Custome
 ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (column_name);
 -- Example:
 ALTER TABLE Employees ADD CONSTRAINT uq_email UNIQUE (Email);
-6. Data Manipulation Language (DML)
 
+
+
+6. Data Manipulation Language (DML)
 -- INSERT
 INSERT INTO employees (name, age) VALUES ('Ali', 30);
 -- Insert full row without column names
@@ -129,8 +133,11 @@ SELECT name FROM employees WHERE age = 30;
 SELECT name FROM employees WHERE age <> 40;
 SELECT name FROM employees WHERE age >= 25;
 SELECT name FROM employees WHERE age <= 35;
-7. Operators in SELECT
 
+
+
+
+7. Operators in SELECT
 -- Alias Names
 SELECT first_name AS fname FROM employees;
 SELECT last_name "surname" FROM employees;
@@ -143,8 +150,11 @@ SELECT salary, salary * 12 AS "annual salary" FROM employees;
 
 -- DISTINCT
 SELECT DISTINCT department FROM employees;
-8. WHERE Clause and Operators
 
+
+
+
+8. WHERE Clause and Operators
 -- Comparison Operators: =, <>, >, <, >=, <=
 SELECT * FROM employees WHERE age = 30;
 SELECT * FROM employees WHERE salary <> 5000;
@@ -159,8 +169,11 @@ SELECT * FROM employees WHERE department IN ('HR', 'IT', 'Sales');
 SELECT * FROM employees WHERE name LIKE 'A%';   -- starts with A
 SELECT * FROM employees WHERE name LIKE '%a';   -- ends with a
 SELECT * FROM employees WHERE name LIKE '_li';  -- 3-letter names ending with 'li'
-9. Logical Operators in WHERE
 
+
+
+
+9. Logical Operators in WHERE
 -- AND (all conditions true)
 SELECT * FROM employees WHERE age > 25 AND department = 'IT';
 
@@ -173,8 +186,11 @@ SELECT * FROM employees WHERE NOT department = 'Finance';
 -- Combined example
 SELECT * FROM employees 
 WHERE (age > 25 AND department = 'IT') OR NOT (salary < 5000);
-10. ORDER BY Examples
 
+
+
+
+10. ORDER BY Examples
 -- Sort by department_id descending
 SELECT employee_id, first_name, department_id
 FROM employees
@@ -184,8 +200,11 @@ ORDER BY department_id DESC;
 SELECT employee_id, first_name, department_id
 FROM employees
 ORDER BY first_name ASC;
-11. NULL Handling
 
+
+
+
+11. NULL Handling
 -- IS NULL and IS NOT NULL
 SELECT * FROM employees WHERE commission_pct IS NULL;
 SELECT * FROM employees WHERE commission_pct IS NOT NULL;
@@ -198,8 +217,11 @@ SELECT employee_id, NVL2(commission_pct, 10, 0) AS comm_flag FROM employees;
 
 -- NULLIF(exp1, exp2)
 SELECT employee_id, NULLIF(salary, 9000) AS salary_check FROM employees;
-12. String Functions
 
+
+
+
+12. String Functions
 SELECT LOWER(first_name) AS lower_name FROM employees;
 SELECT UPPER(first_name) AS upper_name FROM employees;
 SELECT INITCAP(first_name) AS initcap_name FROM employees;
@@ -207,29 +229,41 @@ SELECT SUBSTR(first_name, 1, 3) AS substr_name FROM employees;
 SELECT LENGTH(first_name) AS name_length FROM employees;
 SELECT CONCAT(first_name, last_name) AS full_name FROM employees;
 SELECT REPLACE(first_name, 'a', 'x') AS replaced_name FROM employees;
-13. Numeric Functions
 
+
+
+
+13. Numeric Functions
 SELECT MOD(29, 3) FROM dual;
 SELECT ROUND(5.567, 2) FROM dual;
 SELECT ROUND(55.67, -1) FROM dual;
 SELECT TRUNC(125.815, 1) FROM dual;
 SELECT TRUNC(125.815, -1) FROM dual;
-14. TO_CHAR() and TO_DATE() (Oracle Specific)
 
+
+
+
+14. TO_CHAR() and TO_DATE() (Oracle Specific)
 -- TO_CHAR(date, format)
 SELECT TO_CHAR(SYSDATE, 'DD-MON-YYYY HH24:MI:SS') AS formatted_date FROM dual;
 
 -- TO_DATE(string, format)
 SELECT TO_DATE('2025-07-27', 'YYYY-MM-DD') FROM dual;
-15. Aggregate Functions
 
+
+
+
+15. Aggregate Functions
 SELECT SUM(salary) AS total_salary FROM employees;
 SELECT AVG(salary) AS avg_salary FROM employees;
 SELECT COUNT(employee_id) AS employee_count FROM employees;
 SELECT MIN(salary) AS min_salary FROM employees;
 SELECT MAX(salary) AS max_salary FROM employees;
-16. GROUP BY and HAVING
 
+
+
+
+16. GROUP BY and HAVING
 SELECT department_id, SUM(salary) AS total_salary
 FROM employees
 GROUP BY department_id;
@@ -238,13 +272,19 @@ SELECT department_id, SUM(salary) AS total_salary
 FROM employees
 GROUP BY department_id
 HAVING SUM(salary) > 100000;
-17. Subqueries
 
+
+
+
+17. Subqueries
 SELECT employee_id, first_name, salary
 FROM employees
 WHERE salary > (SELECT AVG(salary) FROM employees);
-18. UNION and CROSS JOIN
 
+
+
+
+18. UNION and CROSS JOIN
 -- UNION: combine SELECT results (same columns & types)
 SELECT employee_id, first_name FROM employees
 UNION
@@ -259,8 +299,11 @@ SELECT * FROM A, B;
 SELECT e.employee_id, e.first_name, e.department_id, d.department_name
 FROM employees e, departments d
 WHERE e.department_id = d.department_id;
-19. Table Constraints Examples
 
+
+
+
+19. Table Constraints Examples
 -- NOT NULL
 CREATE TABLE student (
   id NUMBER(3) NOT NULL,
@@ -302,6 +345,10 @@ CREATE TABLE student (
   name VARCHAR2(10),
   mark NUMBER(4) CHECK (mark > 50)
 );
+
+
+
+
 Summary
 Learn SQL and T-SQL deeply for backend and database work.
 Use LINQ in my application code for efficient, readable querying.
