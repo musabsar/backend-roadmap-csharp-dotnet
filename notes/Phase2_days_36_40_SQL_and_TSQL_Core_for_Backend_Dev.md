@@ -320,10 +320,15 @@ This note will guide my backend journey to master databases and querying efficie
 
 
 
-T-SQL principles:
+✅ Refactored and Clean Version (Markdown-friendly):
+md
+Copy
+Edit
+---
+
 ## 📊 T-SQL Core Principles for Backend Development
 
-Mastering T-SQL is essential for efficient database operations in SQL Server backend roles. Below are key concepts with syntax and examples:
+Mastering T-SQL is essential for SQL Server backend development. Here's a clean set of key principles, syntax, and examples:
 
 ### 1. Basic CRUD Operations
 
@@ -341,13 +346,17 @@ UPDATE Employees SET Age = 31 WHERE Name = 'Ali';
 -- Delete
 DELETE FROM Employees WHERE Name = 'Ali';
 2. Filtering, Sorting, and Paging
-
+sql
+Copy
+Edit
 SELECT Name, Age FROM Employees
 WHERE Department = 'HR'
 ORDER BY Age DESC
-OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;  -- Paging example
+OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;  -- Paging
 3. Joins
-
+sql
+Copy
+Edit
 -- Inner Join
 SELECT e.Name, d.DepartmentName
 FROM Employees e
@@ -358,13 +367,17 @@ SELECT e.Name, d.DepartmentName
 FROM Employees e
 LEFT JOIN Departments d ON e.DepartmentID = d.ID;
 4. Aggregation & Grouping
-
+sql
+Copy
+Edit
 SELECT Department, COUNT(*) AS EmployeeCount, AVG(Age) AS AvgAge
 FROM Employees
 GROUP BY Department
 HAVING COUNT(*) > 5;
 5. Conditional Logic with CASE
-
+sql
+Copy
+Edit
 SELECT Name, Age,
   CASE 
     WHEN Age < 18 THEN 'Minor'
@@ -373,13 +386,20 @@ SELECT Name, Age,
   END AS AgeGroup
 FROM Employees;
 6. Transactions
-
+sql
+Copy
+Edit
 BEGIN TRANSACTION;
+
 UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
 UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+
 COMMIT;
 7. Stored Procedures & Variables
-
+sql
+Copy
+Edit
+-- Create procedure
 CREATE PROCEDURE GetEmployeesByDept
   @DeptName VARCHAR(50)
 AS
@@ -389,11 +409,16 @@ END;
 
 -- Execute procedure
 EXEC GetEmployeesByDept 'IT';
-Next Steps to Master T-SQL for Backend Jobs
-Learn query optimization and indexing strategies
+📌 Next Steps to Master T-SQL for Backend Jobs
+🔍 Learn query optimization & indexing
 
-Practice window functions (ROW_NUMBER, RANK, etc.)
+🪟 Practice window functions: ROW_NUMBER(), RANK(), etc.
 
+⚠️ Understand error handling with TRY...CATCH
+
+🔐 Explore security: roles, permissions, schema control
+
+🧠 Combine T-SQL knowledge with LINQ in C# apps
 Understand error handling (TRY...CATCH)
 
 Explore security with roles and permissions
