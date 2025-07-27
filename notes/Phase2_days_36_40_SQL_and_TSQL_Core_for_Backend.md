@@ -375,7 +375,6 @@ This note will guide my backend journey to master databases and querying efficie
 Mastering T-SQL is essential for SQL Server backend development. Here's a clean set of key principles, syntax, and examples I learned.
 
 ### 1. Basic CRUD Operations
-
 ```sql
 -- Create (Insert)
 INSERT INTO Employees (Name, Age, Department)
@@ -389,14 +388,20 @@ UPDATE Employees SET Age = 31 WHERE Name = 'Ali';
 
 -- Delete
 DELETE FROM Employees WHERE Name = 'Ali';
-2. Filtering, Sorting, and Paging
 
+
+
+
+2. Filtering, Sorting, and Paging
 SELECT Name, Age FROM Employees
 WHERE Department = 'HR'
 ORDER BY Age DESC
 OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;  -- Paging
-3. Joins
 
+
+
+
+3. Joins
 -- Inner Join
 SELECT e.Name, d.DepartmentName
 FROM Employees e
@@ -406,14 +411,20 @@ JOIN Departments d ON e.DepartmentID = d.ID;
 SELECT e.Name, d.DepartmentName
 FROM Employees e
 LEFT JOIN Departments d ON e.DepartmentID = d.ID;
-4. Aggregation & Grouping
 
+
+
+
+4. Aggregation & Grouping
 SELECT Department, COUNT(*) AS EmployeeCount, AVG(Age) AS AvgAge
 FROM Employees
 GROUP BY Department
 HAVING COUNT(*) > 5;
-5. Conditional Logic with CASE
 
+
+
+
+5. Conditional Logic with CASE
 SELECT Name, Age,
   CASE 
     WHEN Age < 18 THEN 'Minor'
@@ -421,16 +432,21 @@ SELECT Name, Age,
     ELSE 'Senior'
   END AS AgeGroup
 FROM Employees;
-6. Transactions
 
+
+
+
+6. Transactions
 BEGIN TRANSACTION;
 
 UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
 UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
-
 COMMIT;
-7. Stored Procedures & Variables
 
+
+
+
+7. Stored Procedures & Variables
 -- Create procedure
 CREATE PROCEDURE GetEmployeesByDept
   @DeptName VARCHAR(50)
