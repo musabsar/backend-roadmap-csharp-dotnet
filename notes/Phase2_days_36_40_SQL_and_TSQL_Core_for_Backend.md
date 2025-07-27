@@ -316,11 +316,13 @@ This note will guide my backend journey to master databases and querying efficie
 
 
 
-✅ Refactored and Clean Version (Markdown-friendly):
-md
-Copy
-Edit
----
+
+
+
+
+
+
+
 
 ## T-SQL Core Principles for Backend Development
 
