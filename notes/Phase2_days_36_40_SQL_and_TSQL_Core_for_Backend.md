@@ -47,6 +47,12 @@ column_name1 data_type, column_name2 data_type, column_name3 data_type,
 column_name3 data_type
 );
 
+VARCHAR2 is Oracle’s preferred string type.
+NUMBER(4) is equivalent to INT(4) in MySQL.
+
+Create a New Table Table_Name from an Existing Table original_Table_Name (With All Fields)
+CREATE TABLE emp1 AS SELECT * FROM emp;
+
 ## 4. ALTER TABLE Examples
 ```sql
 -- 1. ADD COLUMN
