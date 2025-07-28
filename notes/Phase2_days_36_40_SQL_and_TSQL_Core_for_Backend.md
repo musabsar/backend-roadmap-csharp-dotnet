@@ -40,6 +40,12 @@ SQL (Structured Query Language) is used to create, read, update, and delete (CRU
 - Avoid NULL in critical columns if possible (use NOT NULL).
 
 ---
+CREATE TABLE table_name
+(
+column_name1 data_type, column_name2 data_type, column_name3 data_type,
+....
+column_name3 data_type
+);
 
 ## 4. ALTER TABLE Examples
 ```sql
